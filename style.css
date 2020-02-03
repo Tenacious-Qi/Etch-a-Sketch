@@ -44,3 +44,7 @@ h1 {
     padding: 20px; 
     border: solid 1px var(--darkblue);
 }
+
+.active {
+    background-color: var(--darkblue);
+}
