@@ -1,6 +1,7 @@
 :root {
     --white: #ecf0f1;
-    --darkblue: #2c3e50;
+    --blue: #4b6584;
+    --gray: #d1d8e0;
     --black: #333;
   }
 
@@ -8,8 +9,7 @@
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
-    background: var(--white);
-    color: var(--black);
+    background: var(--gray);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
 }
 
@@ -22,29 +22,40 @@
 body {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 
 h1 {
     font-size: 3.5rem;
-    color: var(--darkblue);
-    padding-bottom: 10px;
-    border-bottom: solid 2px var(--darkblue);
+    color: var(--black);
+    padding-bottom: 5px;
+    border-bottom: solid 2px var(--black);
+}
+
+button {
+    margin-bottom: 10px;
 }
 
 #container {
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 512px;
+    height: 512px;
+    background-color: var(--white);
 }
 
 .box {
-    padding: 20px; 
-    border: solid 1px var(--darkblue);
+    width: 16px;
+    height: 16px;
+    /* border: solid 1px var(--black); */
+    
 }
 
 .active {
-    background-color: var(--darkblue);
+    background-color:  var(--black);
 }
+
