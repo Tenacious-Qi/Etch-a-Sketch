@@ -1,6 +1,5 @@
 const container = document.querySelector('#container');
 
-
 function makeGrid(gridSize) {
     for (let i = 0; i < gridSize ** 2; i++) {
         const gridDiv = document.createElement('div');
@@ -19,11 +18,11 @@ for (let i = 0; i < boxes.length; i++) {
 }
 
 const button = document.querySelector('.btn-clear');
-button.addEventListener('click', newGrid);
-
-function newGrid() {
+button.addEventListener('click', function() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].classList.remove('active');
     }
-}
+});
+
+
 
