@@ -32,8 +32,8 @@ function newGrid() {
 
       const boxes = Array.from(document.querySelectorAll('.box'));
       for (let i = 0; i < boxes.length; i++) {
-          boxes[i].style.width = 960 / Number(userInput)  + 'px'; // container width divided by grid width
-          boxes[i].style.height = 640 / Number(userInput) + 'px';
+          boxes[i].style.width = 768 / Number(userInput)  + 'px'; // container width divided by grid width
+          boxes[i].style.height = 480 / Number(userInput) + 'px';
     }
     container.style.gridTemplateColumns = 'repeat(' + Number(userInput) + ', 1fr)';
     container.style.gridTemplateRows = 'repeat(' + Number(userInput) + ', 1fr)';
