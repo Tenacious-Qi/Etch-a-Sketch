@@ -1,5 +1,4 @@
 const container = document.querySelector('#container');
-
 function makeGrid(gridSize) {
     for (let i = 0; i < gridSize ** 2; i++) {
         const gridDiv = document.createElement('div');
@@ -9,8 +8,9 @@ function makeGrid(gridSize) {
 }
 
 makeGrid(32);
+
+const boxes = document.getElementsByClassName('box');
 function activateBoxes() {
-    const boxes = Array.from(document.querySelectorAll('.box'));
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener('mouseenter', function() {
         boxes[i].classList.add('active');
@@ -30,7 +30,6 @@ function newGrid() {
       makeGrid(userInput);
       activateBoxes();
 
-      const boxes = Array.from(document.querySelectorAll('.box'));
       for (let i = 0; i < boxes.length; i++) {
           boxes[i].style.width = 768 / Number(userInput)  + 'px'; // container width divided by grid width
           boxes[i].style.height = 480 / Number(userInput) + 'px';
