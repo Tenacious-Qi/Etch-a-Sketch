@@ -1,6 +1,5 @@
 :root {
     --white: #ecf0f1;
-    --blue: #4b6584;
     --gray: #d1d8e0;
     --black: #333;
   }
@@ -22,7 +21,6 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -38,24 +36,20 @@ button {
 }
 
 #container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-self: center;
-    align-items: center;
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
     width: 960px;
     height: 640px;
     background-color: var(--white);
+    margin-top: 10px;
 }
 
 .box {
     width: 30px;
     height: 20px;
-    border: solid 1px var(--black);
-    
 }
 
 .active {
     background-color:  var(--black);
 }
-
