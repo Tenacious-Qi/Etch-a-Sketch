@@ -1,14 +1,16 @@
 :root {
     --white: #ecf0f1;
-    --gray: #d1d8e0;
     --black: #333;
+    --coastalbreeze: #dff9fb;
+    --deepkoamaru: #30336b;
+    --turbo: #f9ca24;
   }
 
   html {
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
-    background: var(--gray);
+    background: var(--deepkoamaru);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
 }
 
@@ -25,14 +27,28 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
-    color: var(--black);
-    padding-bottom: 5px;
-    border-bottom: solid 2px var(--black);
+    font-size: 2.2rem;
+    color: var(--coastalbreeze);
+    padding-bottom: 4px;
+    border-bottom: solid 2px var(--coastalbreeze);
 }
 
 button {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+    padding: 6px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background: var(--turbo);
+    color: var(--deepkoamaru);
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 12px;
+}
+
+#border {
+    padding: 16px;
+    border: solid 4px var(--coastalbreeze);
+    border-radius: 20px;
+    background: var(--turbo);
 }
 
 #container {
@@ -41,15 +57,17 @@ button {
     grid-template-rows: repeat(32, 1fr);
     width: 960px;
     height: 640px;
-    background-color: var(--white);
-    margin-top: 10px;
+    background-color: var(--coastalbreeze);
+    border-radius: 5px;
 }
 
 .box {
     width: 30px;
     height: 20px;
+    /* border: solid 1px var(--black); */
 }
 
 .active {
-    background-color:  var(--black);
+    background-color: var(--deepkoamaru);
+    transition: background-color 0.2s ease-in-out;
 }
