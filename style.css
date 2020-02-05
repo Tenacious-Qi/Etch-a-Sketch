@@ -42,11 +42,12 @@ button {
     background: var(--turbo);
     color: var(--deepkoamaru);
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
     border-radius: 12px;
 }
 
 button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.1);
     transition: .2s;
 }
 
