@@ -10,20 +10,19 @@
     <body>
         <h1 class="header">Etch-a-Sketch</h1>
         <div class="control-panel">
+            <button class="btn-default">default</button>
+            <button class="btn-random">random</button>
+            <button class="btn-shift">shift</button>
             <button class="btn-clear">clear</button>
             <div class="slider-container">            
-                <label class="slider-label" for="spacing">grid size:</label>
+                <label class="slider-label" for="spacing">size:</label>
                 <input class="slider" id="change-size" type="range" name="change-size" min="2" max="100" value="32">
                 <p class="input-value">32</p>
             </div>
-            
-
         </div>
-       
-        <div id="border">
+       <div id="border">
             <div id="container"></div>
         </div>
-        
-    <script src="main.js"></script>    
+        <script src="main.js"></script>    
     </body>
 </html>
