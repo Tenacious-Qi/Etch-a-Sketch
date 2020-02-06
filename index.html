@@ -9,7 +9,17 @@
     </head>
     <body>
         <h1 class="header">Etch-a-Sketch</h1>
-        <button class="btn-clear">new sketch</button>
+        <div class="control-panel">
+            <button class="btn-clear">clear</button>
+            <div class="slider-container">            
+                <label class="slider-label" for="spacing">grid size:</label>
+                <input class="slider" id="change-size" type="range" name="change-size" min="2" max="100" value="32">
+                <p class="input-value">32</p>
+            </div>
+            
+
+        </div>
+       
         <div id="border">
             <div id="container"></div>
         </div>
