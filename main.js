@@ -25,6 +25,12 @@ activateBoxes();
 const slider = document.querySelector('#change-size');
 let inputValue = document.querySelector('.input-value');
 
+// SLIDER RANGE EVENT LISTENERS //
+slider.addEventListener('change', updateGridSize);
+slider.addEventListener('mousemove', function() {
+    inputValue.textContent = `${this.value}`;
+});
+
 // THIS FUNCTION CHANGES GRID SIZE BASED ON RANGE INPUT VALUE //
 function updateGridSize() {
     while (container.hasChildNodes()) {
@@ -48,12 +54,6 @@ buttonClear.addEventListener('click', clear);
 buttonRandom.addEventListener('click', useRandomColor);
 buttonDefault.addEventListener('click', useDefaultColor);
 buttonFade.addEventListener('click', useFadeColor);
-
-// EVENT LISTENERS FOR SLIDER RANGE //
-slider.addEventListener('change', updateGridSize);
-slider.addEventListener('mousemove', function() {
-    inputValue.textContent = `${this.value}`;
-});
 
 // FUNCTIONS TO RUN WHEN BUTTONS ARE CLICKED //
 function clear() {
