@@ -11,7 +11,6 @@
     font-size: 10px;
     color: var(--gray);
     background: var(--black);
-
 }
 
 *,
@@ -47,7 +46,6 @@ button {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     border-radius: 12px;
-    /* box-shadow: 1px 1px 2px 1px var(--gray); */
 }
 
 button:hover {
@@ -147,8 +145,5 @@ button:hover {
 }
 
 /* CONTAINER ITEM STYLES */
-
-.box {
-    background-color: var(--gray);
-}
+.box {background-color: var(--gray);}
 .active {transition: background-color .2s ease-in-out;}
