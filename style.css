@@ -108,7 +108,7 @@ button:hover {
     appearance: none;
     width: 10px; 
     height: 16px;
-    background: var(--gray); 
+    background: var(--red); 
     cursor: pointer; 
     
 }
@@ -119,7 +119,7 @@ button:hover {
     box-shadow: 1px 1px 1px 1px var(--darkergray);
 }
 
-.slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb:hover {
     transform: scale(1.1);
     transition: .2s;
     box-shadow: 1px 1px 1px 1px var(--darkergray);
