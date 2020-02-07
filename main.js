@@ -8,7 +8,7 @@ function makeGrid(gridSize) {
     }
 }
 // CREATE DEFAULT GRID SIZE //
-makeGrid(32);
+makeGrid(16);
 
 const boxes = document.getElementsByClassName('box');
 function activateBoxes() {
@@ -30,13 +30,8 @@ function updateGridSize() {
     while (container.hasChildNodes()) {
         container.removeChild(container.lastChild);
       }
-      makeGrid(this.value);
-      activateBoxes();
-     
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.width = 768 / this.value + 'px'; // calculate box px dimensions
-        boxes[i].style.height = 480 / this.value + 'px';
-    }
+    makeGrid(this.value);
+    activateBoxes();
     container.style.setProperty('grid-template-columns', 'repeat(' + this.value + ', 1fr)');
     container.style.setProperty('grid-template-rows', 'repeat(' + this.value + ', 1fr)');
     inputValue.textContent = `${this.value}`;

@@ -139,8 +139,8 @@ button:hover {
 
 #container {
     display: grid;
-    grid-template-columns: repeat(32, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     width: 768px;
     height: 480px;
     border-radius: 4px;
@@ -149,9 +149,6 @@ button:hover {
 /* CONTAINER ITEM STYLES */
 
 .box {
-    width: 24px;
-    height: 15px;
     background-color: var(--gray);
 }
-
 .active {transition: background-color .2s ease-in-out;}
