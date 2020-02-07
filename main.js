@@ -1,5 +1,4 @@
 const container = document.querySelector('#container');
-const boxes = document.getElementsByClassName('box');
 
 function makeGrid(gridSize) {
     for (let i = 0; i < gridSize ** 2; i++) {
@@ -11,11 +10,12 @@ function makeGrid(gridSize) {
 // CREATE DEFAULT GRID SIZE //
 makeGrid(32);
 
+const boxes = document.getElementsByClassName('box');
 function activateBoxes() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener('mouseenter', function() {
         boxes[i].classList.add('active');
-        boxes[i].style.backgroundColor = '#30336b';
+        boxes[i].style.backgroundColor = '#2d3436';
         });
     }
 }
@@ -34,7 +34,7 @@ function updateGridSize() {
       activateBoxes();
      
     for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.width = 768 / this.value + 'px'; // container width divided by grid width
+        boxes[i].style.width = 768 / this.value + 'px'; // calculate box px dimensions
         boxes[i].style.height = 480 / this.value + 'px';
     }
     container.style.setProperty('grid-template-columns', 'repeat(' + this.value + ', 1fr)');
@@ -42,42 +42,69 @@ function updateGridSize() {
     inputValue.textContent = `${this.value}`;
 }
 
+// BUTTON SELECTORS AND EVENT LISTENERS //
+const inputCustom = document.querySelector('#custom-color');
+const buttonDefault = document.querySelector('.btn-default');
+const buttonRandom = document.querySelector('.btn-random');
+const buttonClear = document.querySelector('.btn-clear');
+const buttonFade = document.querySelector('.btn-fade');
+inputCustom.addEventListener('click', useCustomColor);
+buttonClear.addEventListener('click', clear);
+buttonRandom.addEventListener('click', useRandomColor);
+buttonDefault.addEventListener('click', useDefaultColor);
+buttonFade.addEventListener('click', useFadeColor);
+
 // EVENT LISTENERS FOR SLIDER RANGE //
 slider.addEventListener('change', updateGridSize);
 slider.addEventListener('mousemove', function() {
     inputValue.textContent = `${this.value}`;
-    });
+});
 
-
-// BUTTON SELECTORS AND EVENT LISTENERS //
-const buttonClear = document.querySelector('.btn-clear');
-const buttonRandom = document.querySelector('.btn-random');
-const buttonDefault = document.querySelector('.btn-default');
-buttonClear.addEventListener('click', clear);
-buttonRandom.addEventListener('click', randomColor);
-buttonDefault.addEventListener('click', activateBoxes);
-
-// FUNCTIONS TO RUN WHEN BUTTONS ARE CLICKED (buttonDefault runs activateBoxes) //
+// FUNCTIONS TO RUN WHEN BUTTONS ARE CLICKED //
 function clear() {
     for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.backgroundColor= '#dff9fb';
+        boxes[i].style.backgroundColor= '#dfe6e9';
     }
 }
-function randomColor() {
+
+function useRandomColor() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener('mouseenter', function() {
-            const r = Math.floor(Math.random()*256);
-            const g = Math.floor(Math.random()*256);
-            const b = Math.floor(Math.random()*256);
-            boxes[i].style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            boxes[i].style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
         });
     }
 }
 
-function shiftColor() {
+function useDefaultColor() {
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].addEventListener('mouseenter', function() {
+            boxes[i].style.backgroundColor = '#2d3436';
+        });
+    }
+}
+
+function useFadeColor() {
+    let red = 45;
+    let green = 52;
+    let blue = 54;
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener('mouseenter', function(){
+            // fade to light gray base color 
+            if ((red >= 45) && (red < 223)) red++
+            if ((green >= 52) && (green < 230)) green++
+            if ((blue >= 54) && (blue < 233)) blue++
+            boxes[i].style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        });
+    }
+}
 
+function useCustomColor() {
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].addEventListener('mouseenter', function(){
+            boxes[i].style.backgroundColor = inputCustom.value;
         });
     }
 }

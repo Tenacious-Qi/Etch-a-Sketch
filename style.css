@@ -1,17 +1,16 @@
 :root {
-    --coastalbreeze: #dff9fb;
-    --deepkoamaru: #30336b;
-    --deepkoamaru-transparent: rgba(48, 51, 107, 0.89);
-    --turbo: #f9ca24;
+    --black: #2d3436;
+    --gray: #dfe6e9;
+    --darkergray: #747d8c;
+    --red: #c0392b;
   }
 
   html {
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
-    color: var(--coastalbreeze);
-    background: var(--deepkoamaru);
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+    color: var(--gray);
+    background: var(--black);
 }
 
 *,
@@ -24,40 +23,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    font-size: 2.1rem;
-    color: var(--coastalbreeze);
+    font-size: 2.6rem;
+    color: var(--gray);
     padding-bottom: 2px;
-    border-bottom: solid 2px var(--coastalbreeze);
+    border-bottom: solid 2px var(--gray);
+    text-shadow: 4px 4px 4px 4px var(--gray);
 }
       
 button {
-    padding: 4px;
-    font-size: 1.4rem;
+    padding: 6px;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    text-shadow: 2px 2px 2px var(--coastalbreeze);
-    background: var(--turbo);
-    color: var(--deepkoamaru);
+    text-shadow: 2px 2px 2px var(--gray);
+    background: var(--gray);
+    color: var(--black);
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     border-radius: 12px;
-    box-shadow: 1px 1px 2px 1px var(--coastalbreeze);
+    /* box-shadow: 1px 1px 2px 1px var(--gray); */
 }
 
 button:hover {
-    transform: translateY(-2px) scale(1.1);
-    transition: .1s;
+    transform: scale(1.1);
+    transition: .2s;
+    cursor: pointer;
+}
+
+#custom-color:hover {
+    transform: scale(1.1);
+    transition: .2s;
     cursor: pointer;
 }
 
 .control-panel {
-    width: 798px;
+    width: 792px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -74,8 +81,8 @@ button:hover {
     -webkit-appearance: none;
     appearance: none;
     width: 100%; 
-    height: 12px; 
-    background: var(--coastalbreeze); 
+    height: 10px; 
+    background: var(--gray); 
     border-radius: 10px;
     outline: none; 
     opacity: 0.75; 
@@ -89,9 +96,10 @@ button:hover {
 
 .slider::-moz-range-thumb {
     width: 10px; 
-    height: 18px; 
-    background: var(--turbo); 
+    height: 16px; 
+    background: var(--red); 
     cursor: pointer; 
+    
 }
 
 .slider::-webkit-slider-thumb {
@@ -99,29 +107,31 @@ button:hover {
     -moz-appearance: none;
     appearance: none;
     width: 10px; 
-    height: 18px;
-    background: var(--turbo); 
+    height: 16px;
+    background: var(--gray); 
     cursor: pointer; 
+    
 }
 
 .slider::-moz-range-thumb:hover {
     transform: scale(1.2);
     transition: .2s;
+    box-shadow: 1px 1px 1px 1px var(--darkergray);
 }
 
 .slider::-webkit-slider-thumb {
     transform: scale(1.1);
     transition: .2s;
+    box-shadow: 1px 1px 1px 1px var(--darkergray);
 }
 
 /* CONTAINER STYLES */
 
 #border {
     padding: 24px;
-    /* border: solid 6px var(--coastalbreeze); */
     border-radius: 20px;
-    background: var(--turbo);
-    box-shadow: 2px 2px 2px 4px var(--coastalbreeze);
+    background: var(--darkergray);
+    /* box-shadow: 2px 2px 2px 4px var(--gray); */
 }
 
 #container {
@@ -138,10 +148,7 @@ button:hover {
 .box {
     width: 24px;
     height: 15px;
-    background-color: var(--coastalbreeze);
+    background-color: var(--gray);
 }
 
-.active {
-    background-color: var(--deepkoamaru);
-    transition: background-color .2s ease-in;
-}
+.active {transition: background-color .2s ease-in-out;}
