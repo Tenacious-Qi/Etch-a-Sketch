@@ -1,4 +1,3 @@
-This is the repository for my attempt at the etch-a-sketch exercise of TOP. I've had a bit of practice with DOM manipulation but definitely not feeling confident. I think the best thing to do is just start. 
-
-Setting up grid: 
-I know a bit of flexbox so that might help. I just started learning CSS grid, so maybe I'll use that (it has grid in the name, and I need a grid).
+This is the repository for my attempt at the etch-a-sketch exercise of The Odin Project. https://www.theodinproject.com/lessons/etch-a-sketch-project 
+It was a great exercise in DOM manipulation and breaking problems down into smaller pieces. I learned more about CSS grid and got some more practice with flexbox. I also had more practice with event listeners. It was fun figuring out how to make the range slider change the grid size. Best of all I made something I enjoy playing with! 
+For a future side project I might try to make it mobile and tablet friendly, so it can be used with a stylus pen or finger.
